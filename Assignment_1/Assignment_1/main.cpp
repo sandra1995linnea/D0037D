@@ -68,22 +68,27 @@ void Ask_PersonalInfo_Part2()
 void Bounce()
 {
 	int n;
+	int m = 0;
 
 	printf("Enter any non-negative number you like: ");
 	scanf_s("%d", &n);
-
-	int *array[5]; // allocate memory for the array
-	malloc(sizeof(&array));
+	
 	if (n < 0)
 	{
 		printf("Negative numbers are not allowed!");
+		return;
 	}
-
 	else
 	{
-		for (int i = 1; i <= n; i++)
+		printf("result: ");
+		for (int i = n; i >= m; i--)
 		{
-			printf("result: %d", i);
+			printf("%d", i);
+		}
+
+		for (int j = 1; j <=n; j++)
+		{
+			printf("%d", j);
 		}
 	}
 
@@ -189,7 +194,8 @@ int main()
 		i++;
 	} while (i < n);*/
 
-	PrimeNumbers();
+	//PrimeNumbers();
+	Bounce();
 	//Ask_PersonalInformation();
 	
 	//system("pasue");
