@@ -127,49 +127,56 @@ void HalfPyramid()
 {
 	// Task 8
 
-	char n[1];
-	string alphabet[30]={"A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","Å","Ä","Ö"};
-	char letter[1];
+	char number, character = '5';
+	char letter;
 	
+	printf("Enter a number you like:  ");
+	while (1)
+	{		
+		scanf_s("%c", &number);
 
-	printf("Enter a character you like, a number o a letter: ");
-	scanf_s("%c", &n);
-
-	if (isdigit((int)n))
-	{
-		for (int i = 1; i >= (int)n; i++)
+		if (isdigit((int)number))
 		{
-			for (int j = 1; j < (int)n; j++)
-			{
-				// do the pyramid
-			}
+			break;
 		}
+		printf("Not a number, please enter a number this time: ");
 	}
-	else
+	
+	printf("Enter an uppercase letter you like:  ");
+	while (1)
 	{
-		if (isupper((int)n))
-		{
-			// do the pyramid
-		}
+		cin >> character;
 
-		else
+		if (isupper((int)character))
 		{
-			toupper((int)n);
-			for (int i = 0; i < sizeof(alphabet); i++)
-			{
-				if (alphabet[i] == n)
-				{
-					//do the pyramid
-				}
-			}
+			break;
 		}
+		printf("Not an uppercase letter, please enter an uppercase letter this time: ");
 	}
 
-	
+	//printing the number in the pyramid
+	for (int i = 1; i <= number-48; i++) 
+	{
+		for (int j = 1; j <= i; j++)
+		{
+			printf("%c", j+48); //adding the ASCII value
+		}
+		printf("\n");
+	}
 
+	printf("\n");
 
-
+	for (int i = (int)'A'; i <= character; i++)
+	{
+		for (int j = (int)'A'; j <= i; j++)
+		{
+			printf("%c", (char)i);
+		}
+		printf("\n");
+	}
 }
+
+
 int main()
 {
 	/*int n = 0;
@@ -195,7 +202,7 @@ int main()
 	} while (i < n);*/
 
 	//PrimeNumbers();
-	Bounce();
+	HalfPyramid();
 	//Ask_PersonalInformation();
 	
 	//system("pasue");
