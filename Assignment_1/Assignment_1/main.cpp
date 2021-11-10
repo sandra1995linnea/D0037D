@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include "PrimeHandler.h"
 using namespace std;
 
 void Ask_PersonalInformation()
@@ -44,22 +45,22 @@ void Ask_PersonalInfo_Part2()
 	float height;
 
 	printf("Tell us your name: ");
-	scanf("%c", &name);
+	scanf_s("%c", &name);
 
 	printf("How old are you? ");
-	scanf("%d", &age);
+	scanf_s("%d", &age);
 
 	printf("Your gender: Enter F if you are a female and M if you are a male: ");
-	scanf("%c", &gender);
+	scanf_s("%c", &gender);
 
 	printf("Your address, please: ");
-	scanf("%c", &address);
+	scanf_s("%c", &address);
 
 	printf("Are you married? Put 1 for a Yes or 0 for a No: ");
-	scanf("%d", &isMarried);
+	scanf_s("%d", &isMarried);
 
 	printf("How tall are you? Answer in meters: ");
-	scanf("%.2f", &height);
+	scanf_s("%.2f", &height);
 
 
 }
@@ -69,9 +70,10 @@ void Bounce()
 	int n;
 
 	printf("Enter any non-negative number you like: ");
-	scanf("%d", &n);
+	scanf_s("%d", &n);
 
-	int array[50]; // allocate memory for the array
+	int *array[5]; // allocate memory for the array
+	malloc(sizeof(&array));
 	if (n < 0)
 	{
 		printf("Negative numbers are not allowed!");
@@ -85,23 +87,35 @@ void Bounce()
 		}
 	}
 
+	
+
 }
 
 void PrimeNumbers()
 {
 	//Task 6
 
-	int Prime_Numbers[10]{ 2, 3, 5, 7, }; // an array of all the prime numbers
-
 	int n;
 
 	printf("Tell us how many prime numbers you want: ");
-	scanf("%d", &n);
+	scanf_s("%d", &n);
+
+	PrimeHandler* handler = new PrimeHandler();
+	int* PrimeNumbers = handler->Primes(n);
 
 	for (int i = 0; i < n; i++)
 	{
-		printf("%d, ", Prime_Numbers[i]);
+		printf("%d", PrimeNumbers[i]);
+
+		if (i < n - 1) // if not the last number
+		{
+			printf(", ");
+		}
 	}
+
+	// Dont forget to deallocate memory, no memory leaks here! :)
+	delete handler;
+	delete PrimeNumbers;
 }
 
 void HalfPyramid()
@@ -110,11 +124,11 @@ void HalfPyramid()
 
 	char n[1];
 	string alphabet[30]={"A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","Å","Ä","Ö"};
-
+	char letter[1];
 	
 
 	printf("Enter a character you like, a number o a letter: ");
-	scanf("%c", &n);
+	scanf_s("%c", &n);
 
 	if (isdigit((int)n))
 	{
@@ -122,7 +136,7 @@ void HalfPyramid()
 		{
 			for (int j = 1; j < (int)n; j++)
 			{
-
+				// do the pyramid
 			}
 		}
 	}
@@ -175,7 +189,8 @@ int main()
 		i++;
 	} while (i < n);*/
 
-	Ask_PersonalInformation();
+	PrimeNumbers();
+	//Ask_PersonalInformation();
 	
 	//system("pasue");
 	return 0;
