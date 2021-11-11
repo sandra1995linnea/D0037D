@@ -29,10 +29,22 @@ void Ask_PersonalInformation()
 	cin >> stringInput;
 	height = std::stof(stringInput);
 
-	cout << name << age << gender << address << relationship_status << height;
+	cout << "\n";
+	cout << "Your name is: "<< name << "\n"  << "You are " << age << " years old \n" << "Your gender is: "<< gender << "\n"
+		<< "Your address is: " << address << "\n" << "Your height is: " << height << " meters" << endl;
 
-	cout << "Press any key to exit\n";
-	cin >> notUsed;
+	if (relationship_status == 1)
+	{
+		cout << "Married: True";
+	}
+
+	else
+	{
+		cout << "Married: False";
+	}
+
+	//cout << "Press any key to exit\n";
+	//cin >> notUsed;
 }
 
 void Ask_PersonalInfo_Part2()
@@ -44,23 +56,23 @@ void Ask_PersonalInfo_Part2()
 	int isMarried;
 	float height;
 
-	printf("Tell us your name: ");
-	scanf_s("%c", &name);
+	printf_s("Tell us your name: ");
+	scanf_s("%c", &name,6);
 
-	printf("How old are you? ");
+	printf_s("How old are you? ");
 	scanf_s("%d", &age);
 
-	printf("Your gender: Enter F if you are a female and M if you are a male: ");
-	scanf_s("%c", &gender);
+	printf_s("Your gender: Enter F if you are a female and M if you are a male: ");
+	scanf_s("%c", &gender,1);
 
-	printf("Your address, please: ");
-	scanf_s("%c", &address);
+	printf_s("Your address, please: ");
+	scanf_s("%c", &address,50);
 
-	printf("Are you married? Put 1 for a Yes or 0 for a No: ");
+	printf_s("Are you married? Put 1 for a Yes or 0 for a No: ");
 	scanf_s("%d", &isMarried);
 
-	printf("How tall are you? Answer in meters: ");
-	scanf_s("%.2f", &height);
+	printf_s("How tall are you? Answer in meters: ");
+	scanf_s("%f", &height);
 
 
 }
@@ -202,8 +214,9 @@ int main()
 	} while (i < n);*/
 
 	//PrimeNumbers();
-	HalfPyramid();
-	//Ask_PersonalInformation();
+	//HalfPyramid();
+	Ask_PersonalInformation();
+	//Ask_PersonalInfo_Part2();
 	
 	//system("pasue");
 	return 0;
