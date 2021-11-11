@@ -43,8 +43,6 @@ void Ask_PersonalInformation()
 		cout << "Married: False";
 	}
 
-	//cout << "Press any key to exit\n";
-	//cin >> notUsed;
 }
 
 void Ask_PersonalInfo_Part2()
@@ -56,23 +54,27 @@ void Ask_PersonalInfo_Part2()
 	int isMarried;
 	float height;
 
-	printf_s("Tell us your name: ");
-	scanf_s("%c", &name,6);
+	printf("Tell us your name: ");
+	scanf_s("%c", name, (unsigned)_countof(name));
 
-	printf_s("How old are you? ");
+	
+	printf("How old are you? ");
 	scanf_s("%d", &age);
 
-	printf_s("Your gender: Enter F if you are a female and M if you are a male: ");
-	scanf_s("%c", &gender,1);
+	printf("Your gender: Enter F if you are a female and M if you are a male: ");
+	scanf_s("%c", gender, (unsigned)_countof(gender));
 
-	printf_s("Your address, please: ");
-	scanf_s("%c", &address,50);
+	printf("Your address, please: ");
+	scanf_s("%c", address, (unsigned)_countof(address));
 
-	printf_s("Are you married? Put 1 for a Yes or 0 for a No: ");
+	printf("Are you married? Put 1 for a Yes or 0 for a No: ");
 	scanf_s("%d", &isMarried);
 
-	printf_s("How tall are you? Answer in meters: ");
+	printf("How tall are you? Answer in meters: ");
 	scanf_s("%f", &height);
+
+	printf("Your name is %c\nYou are %d years old\nYour gender is %c\nYour address is %c\nYour height is %f meters\nYou are married: %d", name, age, gender, 
+		address, height, isMarried);
 
 
 }
@@ -103,9 +105,6 @@ void Bounce()
 			printf("%d", j);
 		}
 	}
-
-	
-
 }
 
 void PrimeNumbers()
@@ -215,8 +214,8 @@ int main()
 
 	//PrimeNumbers();
 	//HalfPyramid();
-	Ask_PersonalInformation();
-	//Ask_PersonalInfo_Part2();
+	//Ask_PersonalInformation();
+	Ask_PersonalInfo_Part2();
 	
 	//system("pasue");
 	return 0;
