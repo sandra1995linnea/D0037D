@@ -55,17 +55,17 @@ void Ask_PersonalInfo_Part2()
 	float height;
 
 	printf("Tell us your name: ");
-	scanf_s("%c", name, (unsigned)_countof(name));
+	scanf_s("%s", name, (unsigned)_countof(name));
 
 	
 	printf("How old are you? ");
 	scanf_s("%d", &age);
 
 	printf("Your gender: Enter F if you are a female and M if you are a male: ");
-	scanf_s("%c", gender, (unsigned)_countof(gender));
+	scanf_s("%s", gender, (unsigned)_countof(gender));
 
 	printf("Your address, please: ");
-	scanf_s("%c", address, (unsigned)_countof(address));
+	scanf_s("%s", address, (unsigned)_countof(address));
 
 	printf("Are you married? Put 1 for a Yes or 0 for a No: ");
 	scanf_s("%d", &isMarried);
@@ -73,8 +73,18 @@ void Ask_PersonalInfo_Part2()
 	printf("How tall are you? Answer in meters: ");
 	scanf_s("%f", &height);
 
-	printf("Your name is %c\nYou are %d years old\nYour gender is %c\nYour address is %c\nYour height is %f meters\nYou are married: %d", name, age, gender, 
-		address, height, isMarried);
+	printf("\n");
+	printf("Your name is %s\nYou are %d years old\nYour gender is %s\nYour address is %s\nYour height is %f meters\n", name, age, gender, 
+		address, height);
+	if (isMarried == 1)
+	{
+		printf("Married: Yes");
+	}
+	else
+	{
+		printf("Married: No");
+
+	}
 
 
 }
@@ -213,9 +223,10 @@ int main()
 	} while (i < n);*/
 
 	//PrimeNumbers();
+	//Bounce();
 	//HalfPyramid();
-	//Ask_PersonalInformation();
-	Ask_PersonalInfo_Part2();
+	Ask_PersonalInformation();
+	//Ask_PersonalInfo_Part2();
 	
 	//system("pasue");
 	return 0;
