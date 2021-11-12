@@ -97,6 +97,7 @@ void Bounce()
 	printf("Enter any non-negative number you like: ");
 	scanf_s("%d", &n);
 	
+	//checking that the input number is a non-negative
 	if (n < 0)
 	{
 		printf("Negative numbers are not allowed!");
@@ -126,6 +127,7 @@ void PrimeNumbers()
 	printf("Tell us how many prime numbers you want: ");
 	scanf_s("%d", &n);
 
+	//creating an object of the class that handles the prime numbers
 	PrimeHandler* handler = new PrimeHandler();
 	int* PrimeNumbers = handler->Primes(n);
 
@@ -156,6 +158,7 @@ void HalfPyramid()
 	{		
 		scanf_s("%c", &number);
 
+		//checking if it is a number
 		if (isdigit((int)number))
 		{
 			break;
@@ -167,7 +170,7 @@ void HalfPyramid()
 	while (1)
 	{
 		cin >> character;
-
+		//checking that it is an uppercase letter
 		if (isupper((int)character))
 		{
 			break;
@@ -187,6 +190,7 @@ void HalfPyramid()
 
 	printf("\n");
 
+	//printing the letter pyramid
 	for (int i = (int)'A'; i <= character; i++)
 	{
 		for (int j = (int)'A'; j <= i; j++)
@@ -197,7 +201,7 @@ void HalfPyramid()
 	}
 }
 
-
+//this is the only main function that contains the helloworld tasks and function calls to all the other functions above main
 int main()
 {
 	/*int n = 0;

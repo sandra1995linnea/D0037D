@@ -10,6 +10,7 @@ int* PrimeHandler::Primes(int numberOfPrimes)
 
 	while (count < numberOfPrimes)
 	{
+		//checking that the candidate number is a primenumber, if so we add it to the array
 		if (isPrime(candidate))
 		{
 			AddToArray(candidate);
@@ -20,6 +21,7 @@ int* PrimeHandler::Primes(int numberOfPrimes)
 	return primes;
 }
 
+//method for checking if it is a prime number
 bool PrimeHandler::isPrime(int number)
 {
 	for(int i = 0;  i < count; i++)
@@ -31,7 +33,7 @@ bool PrimeHandler::isPrime(int number)
 	}
 	return true;
 }
-
+//method for adding primenumbers into an array
 void PrimeHandler::AddToArray(int number)
 {
 	primes[count] = number;
